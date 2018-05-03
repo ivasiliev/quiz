@@ -150,6 +150,34 @@ var main = {
         cont.innerHTML = '<p>Спасибо! Вы успешно завершили блок вопросов "' + block.title + '"</p>';
 
         return cont;
+    },
+
+    send: function (params) {
+        var self = this;
+        var xhr = new XMLHttpRequest();
+        xhr.open(params.method, params.url, true);
+        xhr.onload = xhr.onerror = function () {
+            //console.log(this.responseType);
+            //console.log(this.getResponseHeader('content-type'));
+            if (Number(this.status) === 200) {
+                var data = JSON.parse(this.responseText);
+                if (data[0] === false) {
+                    alert('error answer');
+                    return false;
+                }
+            } else {
+                console.log("error " + this.status);
+                alert('error request: ' + this.status);
+                return false;
+            }
+
+            if (params.func) {
+                params.func(data, params);
+            } else {
+                self.render(data, params.key);
+            }
+        };
+        xhr.send(params.form);
     }
 };
 

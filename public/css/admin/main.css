@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: arial;
+    font-size: 16px;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: #00afa6;
+    box-shadow: 0 0 10px #5a5a5a;
+    z-index: 2;
+}
+
+header div {
+    max-width: 720px;
+    height: 70px;
+    line-height: 70px;
+    color: #fff;
+    font-size: 1.4em;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+section {
+    margin: 0 auto;
+    padding: 70px 10px 50px;
+    height: 100vh;
+    overflow: auto;
+    max-width: 720px;
+}
+
+.progress_bar {
+    height: 10px;
+    margin: 10px 0;
+    background: #d8d8d8;
+    padding: 1px;
+    border-radius: 10px;
+}
+
+.progress_bar > div {
+    height: 8px;
+    width: 0%;
+    background: #00afa6;
+    border-radius: 8px;
+    transition-duration: .4s;
+}
+
+.question_cont > font {
+    font-size: .8em;
+}
+
+.question_cont ul {
+    display: block;
+    margin: 20px 0;
+    padding: 0;
+    border-top: solid 1px #f1f1f1;
+    border-bottom: solid 1px #f1f1f1;
+    list-style-type: none;
+}
+
+section button {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    padding: 8px 16px;
+    color: #fff;
+    font-size: 1.1em;
+    border-radius: 7px;
+    cursor: pointer;
+    background: #00afa6;
+    transition-duration: .4s;
+}
+
+.question_cont > button:hover {
+    background: #005e6e;
+}
+
+.question_cont ul > li {
+    display: block;
+}
+
+.question_cont ul > li > label {
+    cursor: pointer;
+    background: transparent;
+    display: block;
+    padding: 8px 0;
+    font-size: 1em;
+    transition-duration: .4s;
+}
+
+.question_cont ul > li > label > * {
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 1em;
+}
+
+.question_cont ul > li > label > input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.question_cont ul > li > label:hover {
+    background: #f1f1f1;
+}
+
+footer {
+    position: relative;
+    margin-top: -50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #005e6e;
+    font-size: .9em;
+}
+
+footer a {
+    color: #d8d8d8;
+    text-decoration: none;
+    border-bottom: solid 1px;
+    border-color: transparent;
+    transition-duration: .4s;
+}
+
+footer a:hover {
+    border-color: #fff;
+    color: #fff;
+}

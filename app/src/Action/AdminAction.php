@@ -6,31 +6,22 @@ use Slim\Views\Twig;
 use Psr\Log\LoggerInterface;
 use Slim\Http\Request;
 use Slim\Http\Response;
-use App\Action\Imgs;
-use App\Action\Auth;
+use App\ORM\DataService;
 
 class AdminAction {
 
 	private $view;
 	private $logger;
-	private $user;
-	private $userdata;
+	private $data;
 
 	public function __construct(Twig $view, LoggerInterface $logger) {
 		$this->view = $view;
 		$this->logger = $logger;
-		$this->user = new Auth($this->view, $this->logger);
-		$this->userdata = $this->user->info();
-		if (!$this->userdata) {
-			header('Location: /login');
-			exit;
-		}
+		$this->data = new DataService($this->view, $this->logger);
 	}
 
 	public function __invoke(Request $request, Response $response, $args) {
-		$this->view->render($response, 'admin/main.twig', array(
-		    "user" => $this->userdata
-		));
+		$this->view->render($response, 'admin/main.twig', array());
 		return $response;
 	}
 
