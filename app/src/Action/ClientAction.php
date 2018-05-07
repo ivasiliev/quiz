@@ -15,7 +15,6 @@ final class ClientAction {
     private $data;
 
     public function __construct(Twig $view, LoggerInterface $logger) {
-        parent::__construct($view, $logger);
         $this->view = $view;
         $this->logger = $logger;
         $this->data = new DataService($this->view, $this->logger);
