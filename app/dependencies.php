@@ -46,30 +46,10 @@ $container['logger'] = function ($c) {
 // Action factories
 // -----------------------------------------------------------------------------
 
-$container[App\Action\HomeAction::class] = function ($c) {
-    return new App\Action\HomeAction($c->get('view'), $c->get('logger'));
-};
-
-$container[App\Action\Imgs::class] = function ($c) {
-    return new App\Action\Imgs($c->get('view'), $c->get('logger'));
-};
-
-$container[App\Action\Auth::class] = function ($c) {
-    return new App\Action\Auth($c->get('view'), $c->get('logger'));
-};
-
 $container[App\Action\AdminAction::class] = function ($c) {
     return new App\Action\AdminAction($c->get('view'), $c->get('logger'));
 };
 
-$container[App\Blog\Action\BaseAction::class] = function ($c) {
-    return new App\Blog\Action\BaseAction($c->get('view'), $c->get('logger'));
-};
-
-$container[App\Blog\Action\CommentAction::class] = function ($c) {
-    return new App\Blog\Action\CommentAction($c->get('view'), $c->get('logger'));
-};
-
-$container[App\Action\UserAction::class] = function ($c) {
-    return new App\Action\UserAction($c->get('view'), $c->get('logger'));
+$container[App\Action\ClientAction::class] = function ($c) {
+    return new App\Action\ClientAction($c->get('view'), $c->get('logger'));
 };

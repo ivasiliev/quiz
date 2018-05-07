@@ -12,11 +12,9 @@
 $app->get('/', App\Action\ClientAction::class)
         ->setName('homepage');
 
-$app->get('/api/login/form[/]', 'App\Action\ClientAction:ShowForm');
-
 //------------------------------------------------------------------------------
 // Admin routes
 //------------------------------------------------------------------------------
-$app->get('/admin[/]', 'App\Action\AdminAction:class');
+$app->get('/admin[/]', App\Action\AdminAction::class);
 
 $app->post('/api/login/check[/]', 'App\Action\AdminAction:LoginCheck');
