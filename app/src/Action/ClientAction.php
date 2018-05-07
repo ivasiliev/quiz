@@ -21,7 +21,7 @@ final class ClientAction {
     }
 
     public function __invoke(Request $request, Response $response, $args) {
-        $this->view->render($response, 'main.twig', array());
+        $this->view->render($response, 'client/main.twig', array());
         return $response;
     }
 
